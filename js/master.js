@@ -9207,6 +9207,10 @@ return jQuery;
 // js for HFSecure/root
 
 $(document).ready(function() {
+
+	// always keep logo centered on tablet, laptop, desktop
+	$('.border').css('left', ( ( $(window).width() / 2 ) - 210 ) );
+
 	$('nav').hide();
 	console.log('nav hidden.');
 	
@@ -9217,6 +9221,8 @@ $(document).ready(function() {
 	$('header img').css('height', 300);
 	$('.border').hide();
 	
+	$('.wrapper-legal').hide();
+
 //	setTimeout(function() {
 //		$('header h1 span').each(function(addDelay) {
 //			$(this).delay(650 * addDelay).animate({
@@ -9251,5 +9257,44 @@ $(document).ready(function() {
 	$('#nav-button').click(function() {
 		$('nav').fadeToggle(400);
 	})
+
+	$('.legal').click(function() {
+		$('.wrapper-legal').toggle();
+	})
 	
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

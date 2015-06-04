@@ -514,6 +514,19 @@ nav {
 			}
 		}
 	}
+	p.dispinfo {
+		color: white;
+		margin-top: 28px;
+		margin-left: 100px;
+		float: left;
+		max-width: 300px;
+		span {
+			font-weight: 700;
+			font-size: 16px;
+			border: 1px solid white;
+			padding: 0 3px;
+		}
+	}
 }
 
 
@@ -522,7 +535,7 @@ header {
 	height: 900px;
 	background-image: url('../images/lansing-u.png');
 	background-position: center;
-	background-size: 100% auto;
+	background-size: 120% auto;
 	background-repeat: no-repeat;
 	.wrapper {
 		padding-top: 90px;
@@ -577,18 +590,24 @@ header {
 		font-size: 24px;
 		margin: 0 auto;
 	}
+	ul {
+		width: 90%;
+		max-width: 600px;
+		margin: 0 auto;
+	}
 }
 
 .confidence {
 	background-image: url('../images/water-2.png'); 
-	background-size: 100% auto;
+	background-size: 120% auto;
 	height: 750px;
 	h2 {
 		font-size: 10em;
-		opacity: 0.4;
+		// opacity: 0.4;
+		color: rgba(255,255,255,0.4);
 		padding-top: 90px;
 		padding-bottom: 30px;
-		max-width: 1000px
+		max-width: 1000px;
 	}
 	p {
 		max-width: 500px;
@@ -615,7 +634,7 @@ header {
 
 .security {
 	background-image: url('../images/cam.jpg'); 
-	background-size: 100% auto;
+	background-size: 120% auto;
 	height: 750px;
 	.wrapper {
 		width: 50%;
@@ -633,14 +652,15 @@ header {
 		}
 		h2 {
 			font-size: 10em;
-			opacity: 0.4;
+		//	opacity: 0.4;
+			color: rgba(0,0,0,0.4);
 		}
 	}
 }
 
 .aerial {
 	background-image: url('../images/aerial.png'); 
-	background-size: 100% auto;
+	background-size: 120% auto;
 	height: 750px;
 	padding: 0;
 	.wrapper {
@@ -651,7 +671,8 @@ header {
 	}
 	h2 {
 		font-size: 100px;
-		opacity: 0.5;
+		// opacity: 0.5;
+		color: rgba(255,255,255,0.5);
 		padding-top: 90px;
 		padding-bottom: 30px;
 	}
@@ -676,6 +697,12 @@ footer {
 			border-top: 1px solid white;
 			float: left;
 			color: white;
+			a {
+				margin-left: 5%;
+			}
+			p {
+				margin: 10px auto;
+			}
 		}
 		.col-l {
 
@@ -687,18 +714,6 @@ footer {
 				text-transform: uppercase;
 				font-size: 11px;
 				margin-top: 20px;
-			}
-			input,
-			textarea {
-				width: 90%;
-				border: 1px solid white;
-				margin: 8px auto;
-				color: white;
-				text-align: center;
-				display: block;
-				border-radius: 3px;
-				background-color: #555;
-				line-height: 22px;
 			}
 		}
 		.col-r {
@@ -727,9 +742,64 @@ footer {
 		display: inline;
 		text-decoration: none;
 		color: #555;
+		font-size: 10px;
 	}
 	a {
 		color: #777;
+	}
+}
+
+.form {
+	input,
+	textarea,
+	select {
+		width: 90%;
+		max-width: 500px;
+		border: 1px solid #999;
+		margin: 8px auto;
+		color: white;
+		text-align: center;
+		display: block;
+		border-radius: 3px;
+		background-color: #555;
+		line-height: 22px;
+		transition: all 300ms ease-in-out;
+	}
+	option {
+		text-align: left;
+		padding: 4px 10px;
+		background-color: #222;
+	}
+	textarea {
+		height: 100px;
+	}
+	input:hover,
+	textarea:hover {
+		border: 1px solid #ccc;
+	}
+	input:focus,
+	textarea:focus {
+		margin: 14px auto;
+		border: 2px solid #fff;
+	}
+	label {
+		width: 90%;
+		max-width: 500px;
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+		margin-top: 40px;
+		span {
+			text-transform: uppercase;
+			font-size: 10px;
+			text-align: center;
+			font-weight: 700;
+		}
+	}
+	input.button:hover {
+		color: black;
+		background-color: white;
+		cursor: pointer;
 	}
 }
 
@@ -739,9 +809,7 @@ footer {
 
 
 
-
-
-footer .wrapper .col.col-m input.button,
+.form input.button,
 .button {
 	width: 150px;
 	display: block;
@@ -751,7 +819,7 @@ footer .wrapper .col.col-m input.button,
 	transition: all 200ms ease-in-out;
 	text-transform: uppercase; // input.button
 	font-size: 11px;
-	a {
+	a, span {
 		font-family: @oxygen;
 		text-align: center;
 		text-decoration: none;
@@ -761,14 +829,14 @@ footer .wrapper .col.col-m input.button,
 		display: block;
 		width: 100%;
 		padding: 5px 0;
-		transition: all 200ms ease-in-out;
+		transition: all 100ms ease-in-out;
 	}
 }
 .button:hover {
-	a {
+	a, span {
 		color: black;
 		background-color: white;
-
+		cursor: pointer;
 	}
 }
 
@@ -786,6 +854,77 @@ footer .wrapper .col.col-m input.button,
 	}
 }
 
+.inv-header {
+	background-image: url('../images/biz.png');
+	background-position: center bottom;
+	background-size: 140% auto;
+	height: 600px;
+	padding: 0;
+	.wrapper {
+		padding: 0;
+		height: 100%;
+		background-color: rgba(0,0,0,0.7);
+		img {
+			width: 200px;
+			margin-left: 10%;
+			margin-top: 100px;
+		}
+		h2, p {
+		//	color: #222;
+			font-size: 24px;
+			margin-left: 10%;
+			margin-top: 20px;
+			text-align: left;
+		}
+		p {
+			font-size: 14px;
+			max-width: 350px;
+		}
+	}
+}
+
+.inv-services {
+	background-color: #111;
+	.wrapper {
+		h2 {
+			font-size: 55px;
+		}
+		p {
+			margin-bottom: 20px;
+		}
+		ul {
+			max-width: 650px;
+			li {
+				list-style: none;
+				margin-bottom: 50px;
+				p {
+					font-size: 14px;
+					span {
+						text-transform: uppercase;
+						font-size: 22px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.inv-quo-req {
+	background-image: url('../images/water-2.png');
+	h2 {
+		font-size: 36px;
+		margin-bottom: 50px;
+	}
+}
+
+
+
+
+// background-images
+
+@media all and (max-width: 1400px) {
+
+}
 
 
 
@@ -797,8 +936,13 @@ footer .wrapper .col.col-m input.button,
 
 
 
+// Dev
 
-
+.inv- {
+	height: 200px;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+}
 
 
 

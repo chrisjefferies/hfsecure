@@ -2,7 +2,7 @@
 <html>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/master.css">
-<script type="text/javascript" src="js/master.min.js"></script>
+<script type="text/javascript" src="js/master.js"></script>
 
 <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300|Playfair+Display:400,700' rel='stylesheet' type='text/css'>
 
@@ -31,12 +31,15 @@
 		</div>
 	</header>
 	<nav>
+		<p class="dispinfo">
+			&larr; Click here or press <span>M</span> for menu
+		</p>
 		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Investigation</a></li>
-			<li><a href="#">Security &amp; Auditing</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="investigation.html">Investigation</a></li>
+			<li><a href="security.html">Security &amp; Auditing</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
 		</ul>
 	</nav>
 	<div id="nav-button">
@@ -120,6 +123,11 @@
 			<p>
 				All of our investigations are conducted within Federal, State and Local laws. We utlize the best tools get the best possible results while respecting the privacy rights of everyone we deal with.
 			</p>
+			<div class="button">
+				<a href="#">
+					Capabilities &raquo;
+				</a>
+			</div>
 		</div>
 	</div>
 
@@ -144,7 +152,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="col col-m">
+			<div class="col col-m form">
 				<p>
 					Send us a message
 				</p>
@@ -152,9 +160,7 @@
 					<input name="name" type="text" placeholder="Name" maxlength="100">
 					<input name="emai" type="email" placeholder="Email Address">
 					<input name="subj" type="text" placeholder="Subject" maxlength="100">
-					<textarea name="mess" placeholder="Message">
-						
-					</textarea>
+					<textarea name="mess" placeholder="Message"></textarea>
 					<input class="button" name="subm" type="submit" value="submit">
 				</form>
 			</div>
@@ -170,9 +176,6 @@
 					</p>
 					<p>
 						MI investigation License #: 12345678912345
-					</p>
-					<p>
-						
 					</p>
 					<a href="#" target="blank">
 						View License Document
@@ -195,10 +198,37 @@
 				<a href="http://cjefferies.com" target="_blank">chris jefferies</a>
 			</div>
 		</div>
-		
 	</footer>
 
+	<script type="text/javascript">
 
+		$('.dispinfo').hide();
+
+		setTimeout(function() {
+			console.log('firing');
+			if (window.introTimer) {
+				$('.dispinfo').show();
+				$('nav ul').css('opacity', 0);
+				$('.dispinfo').css('opacity', 0);
+				$('nav').fadeToggle(400, function() {
+					$('.dispinfo').animate({
+						'opacity': 1
+					}, 400, function() {
+						$(this).delay(1200).animate({
+							'opacity': 0
+						},400, function() {
+							$('nav').fadeToggle(400, function() {
+								$('nav ul').css('opacity', 1);
+								$('.dispinfo').css('display', 'none');
+								console.log('finished firing');
+								window.introTimer = false;
+							});
+						});
+					});
+				});
+			}
+		},2400);
+	</script>
 
 </body>
 </html>

@@ -9208,6 +9208,8 @@ return jQuery;
 
 $(document).ready(function() {
 
+	window.introTimer = true;
+
 	// always keep logo centered on tablet, laptop, desktop
 	$('.border').css('left', ( ( $(window).width() / 2 ) - 210 ) );
 
@@ -9222,6 +9224,8 @@ $(document).ready(function() {
 	$('.border').hide();
 	
 	$('.wrapper-legal').hide();
+
+	$('.quote-request').hide();
 
 //	setTimeout(function() {
 //		$('header h1 span').each(function(addDelay) {
@@ -9249,12 +9253,38 @@ $(document).ready(function() {
 			$('header p').fadeIn(400);
 		});
 	}, 1200);
-	
-	
-	
-	
+
+
+	//###########   Quote Request Related   ###########
+
+	$('#quo-req-cor, #quo-req-con, #quo-req-ins').click(function() {
+		$('html, body').animate({
+			scrollTop: '2100px'
+		}, 600);
+
+		setTimeout(function() {
+			$('.quote-request').slideDown(600);
+		}, 300)
+	})
+
+
+
+	//###########   NAV Related   ###########
+
+	$(window).on('keyup', function(e) {
+		if (e.which == 77) {
+			if ( $('input, textarea').is(':focus') ) {
+				// do nothing
+			} else {
+				window.introTimer = false;
+				$('nav').fadeToggle(400);
+			}
+		}
+	});
+
 	// nav controls
 	$('#nav-button').click(function() {
+		window.introTimer = false;
 		$('nav').fadeToggle(400);
 	})
 

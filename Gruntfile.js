@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         },
         watch: {
             files: ['js/script.js', 'less/style.less'],
-            tasks: ['concat:script', 'concat:less', 'less', 'uglify'],
+            tasks: ['concat:script', 'concat:less', 'less'],
         },
         
 

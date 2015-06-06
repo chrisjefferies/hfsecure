@@ -12,28 +12,16 @@
 			<div class="border"></div>
 			<img src="img/logo.svg" alt="h&f secure" />
 			<h1>
-				<!--
-				<span>Dedicated</span> 
-				<span>to uncompromising</span> 
-				<span>service</span> 
-				<span>and&nbsp;excellence</span>
-				-->
 				Dedicated to uncompromising service &amp; excellence
 			</h1>
 			<p>
 				For businesses that demand better value, service and attention in investigative and security services.
 			</p>
-			<!--
-			<p>
-				Dependability is our vernacular.
-			</p>
-			-->
 		</div>
 	</header>
+
+
 	<nav>
-		<p class="dispinfo">
-			&larr; Click here or press <span>M</span> for menu
-		</p>
 		<ul>
 			<li><a href="index.html">Home</a></li>
 			<li><a href="investigation.html">Investigation</a></li>
@@ -115,21 +103,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="story aerial">
-		<div class="wrapper">
-			<h2>
-				A Sharper Eye
-			</h2>
-			<p>
-				All of our investigations are conducted within Federal, State and Local laws. We utlize the best tools get the best possible results while respecting the privacy rights of everyone we deal with.
-			</p>
-			<div class="button">
-				<a href="#">
-					Capabilities &raquo;
-				</a>
-			</div>
-		</div>
-	</div>
+	
+
 
 	<footer>
 		<div class="wrapper">
@@ -201,55 +176,24 @@
 	</footer>
 
 	<script type="text/javascript">
-
-		$('.dispinfo').hide();
-
 		// Header onLoad animation.
 		setTimeout(function() {
 			$('header img').animate({
 				'opacity': 1,
 				'height': 330
 			}, 600);
-		}, 200 );
-		setTimeout(function() {
 			$('header h1').animate({
 				'opacity': 1,
 				'font-size': '36px'
-			},600)
-		}, 600);
+			}, 600);
+			$('header p').fadeIn(400);
+		}, 200);
 		setTimeout(function() {
-			$('.border').fadeIn(400, function() {
-				$('header p').fadeIn(400);
-			});
-		}, 1200);
-
-
-		// nav intro
-		setTimeout(function() {
-			console.log('firing');
-			if (window.introTimer) {
-				$('.dispinfo').show();
-				$('nav ul').css('opacity', 0);
-				$('.dispinfo').css('opacity', 0);
-				$('nav').fadeToggle(400, function() {
-					$('.dispinfo').animate({
-						'opacity': 1
-					}, 400, function() {
-						$(this).delay(1200).animate({
-							'opacity': 0
-						},400, function() {
-							$('nav').fadeToggle(400, function() {
-								$('nav ul').css('opacity', 1);
-								$('.dispinfo').css('display', 'none');
-								console.log('finished firing');
-								window.introTimer = false;
-							});
-						});
-					});
-				});
-			}
-		},2400);
+			$('.border').fadeIn(400);
+		}, 800);
 	</script>
+
+	
 
 </body>
 </html>

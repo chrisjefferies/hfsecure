@@ -9236,6 +9236,7 @@ $(document).ready(function() {
 //	}, 200 );
 
 	// Header onLoad animation.
+	/*
 	setTimeout(function() {
 		$('header img').animate({
 			'opacity': 1,
@@ -9253,6 +9254,7 @@ $(document).ready(function() {
 			$('header p').fadeIn(400);
 		});
 	}, 1200);
+	*/
 
 
 	//###########   Quote Request Related   ###########
@@ -9265,7 +9267,11 @@ $(document).ready(function() {
 		setTimeout(function() {
 			$('.quote-request').slideDown(600);
 		}, 300)
-	})
+	});
+
+
+
+	
 
 
 
@@ -9286,11 +9292,22 @@ $(document).ready(function() {
 	$('#nav-button').click(function() {
 		window.introTimer = false;
 		$('nav').fadeToggle(400);
-	})
+	});
 
 	$('.legal').click(function() {
 		$('.wrapper-legal').toggle();
-	})
+	});
+
+	// contact (index.html) scroll to. 
+	$('.nav-contact').click(function(e) {
+		e.preventDefault();
+		$('html, body').animate({
+			scrollTop: '3100px'
+		},1200);
+		setTimeout(function() {
+			$('.form-name').select();
+		},1500);
+	});
 	
 });
 
